@@ -1,10 +1,10 @@
-package com.shilei.study;
+package com.shilei.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StudyApplicationTests {
+class WebApplicationTests {
 
     @Test
     void contextLoads() {
