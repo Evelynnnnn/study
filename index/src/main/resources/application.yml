@@ -1,0 +1,40 @@
+# 应用名称
+spring:
+  application:
+    name: study
+  mvc:
+    throw-exception-if-no-handler-found: true
+    resources.add-mappings: false
+  jpa:
+    database: MYSQL
+    show-sql: false
+    physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    format-sql: true
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+  messages:
+    basename: authority, authz-api, authz-security
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      test-on-borrow: false
+      test-while-idle: true
+      test-on-return: false
+      validation-query: select 'x'
+server:
+  context-path: /study
+  port: 8088
+
+flyway:
+  enabled: true
+  table: schema_version
+  locations:
+    classpath: db/origin #可以配置多个值
+  check-location: true
+  enconding: UTF-8
