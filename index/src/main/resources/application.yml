@@ -38,3 +38,8 @@ flyway:
     classpath: db/origin #可以配置多个值
   check-location: true
   enconding: UTF-8
+
+project:
+  study:
+    config:
+      key: STUDY

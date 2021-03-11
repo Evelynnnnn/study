@@ -6,7 +6,7 @@ import org.junit.Test;
 import javax.servlet.http.PushBuilder;
 import java.util.Scanner;
 
-public class Ch01Subjects {
+public class Ch01Subjects01 {
 
     private static String getType(Object a) {
         return a.getClass().toString();
@@ -85,4 +85,6 @@ public class Ch01Subjects {
         }
         return s;
     }
+
+
 }

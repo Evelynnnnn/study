@@ -5,7 +5,7 @@ import com.shilei.algm.utils.StdRandom;
 
 import java.util.Arrays;
 
-public class Ch01Exam {
+public class Ch01Exam01 {
 
     public static void main(String[] args) {
         //function();
