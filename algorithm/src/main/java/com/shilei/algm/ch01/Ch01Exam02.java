@@ -1,18 +1,26 @@
 package com.shilei.algm.ch01;
 
-import com.shilei.algm.utils.Counter;
-import com.shilei.algm.utils.Interval1D;
-import com.shilei.algm.utils.Interval2D;
-import com.shilei.algm.utils.Point2D;
+import com.shilei.algm.utils.*;
+import lombok.Data;
 import org.junit.Test;
 
 import java.awt.*;
 
+@Data
 public class Ch01Exam02 {
 
+    double total;
+    int N;
+
     public static void main(String[] args) {
-        String[] arg = new String[]{"0.1","0.9","0.3","0.4","1000"};
-        Interval2D(arg);
+        String[] arg = new String[]{"0.1","0.9","0.3","0.4","2000"};
+//        Interval2D(arg);
+        int T = Integer.parseInt(arg[4]);
+        Ch01Exam02 ch01Exam02 = new Ch01Exam02(T,0.5);
+        for (int i = 0; i < T; i++) {
+            ch01Exam02.addDataValue(StdRandom.random() / 2);
+            StdOut.println(ch01Exam02);
+        }
     }
 
     /**
@@ -47,4 +55,20 @@ public class Ch01Exam02 {
         System.out.println(c);
         System.out.println(box.area());
     }
+
+    public Ch01Exam02(int trials,double max){
+        StdDraw.setXscale(0,trials);
+        StdDraw.setYscale(0,max);
+        StdDraw.setPenRadius(0.005);
+    }
+
+    public void addDataValue(double value){
+        N++;
+        total += value;
+        StdDraw.setPenColor(StdDraw.DARK_GRAY);
+        StdDraw.point(N,value);
+        StdDraw.setPenColor(StdDraw.RED);
+        StdDraw.point(N,total/N);
+    }
+
 }
